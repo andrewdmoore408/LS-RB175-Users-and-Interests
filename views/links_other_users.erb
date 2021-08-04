@@ -1,0 +1,4 @@
+<% @users.each do |user| %>
+  <% next if user[:name] == @user[:name] %>
+    <%= user %>
+<% end %>
