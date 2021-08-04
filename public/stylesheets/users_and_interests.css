@@ -1,0 +1,14 @@
+html {
+  text-align: center;
+}
+
+.other-user-links {
+  display: inline;
+  padding-inline: 10px;
+}
+
+footer {
+  margin-top: 100px;
+  color: #5555ee;
+  font-size: 14px;
+}

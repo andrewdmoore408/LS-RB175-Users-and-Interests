@@ -2,12 +2,24 @@
 <html>
 <head>
   <meta charset="utf-8">
+
   <title>Users and Interests<%= ": #{@user}" if @user %></title>
+
+  <link rel="stylesheet" href="/stylesheets/users_and_interests.css">
 </head>
 <body>
-  <h1>Users and Interests</h1>
+  <header>
+    <h1>Users and Interests</h1>
+  </header>
 
-  <%= yield %>
+  <main>
+    <%= yield %>
+  </main>
 
+  <footer>
+    <p>
+      There are <%= @users.length %> users with a total of <%= count_interests %> interests.
+    <p>
+  </footer>
 </body>
 </html>

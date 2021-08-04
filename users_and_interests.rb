@@ -13,7 +13,15 @@ before do
 end
 
 helpers do
+  def count_interests
+    interest_count = 0
 
+    @users.each do |user|
+      interest_count += user[:interests].length
+    end
+
+    interest_count
+  end
 end
 
 get "/" do
@@ -25,7 +33,6 @@ get "/:user_name" do
 
   user_name = params[:user_name].to_sym
 
-  # TODO: redirect if user_name isn't found in list
   redirect "/" unless @users.any? { |user| user[:name] == user_name }
 
   @name = user_name
@@ -34,11 +41,11 @@ get "/:user_name" do
 
   puts @user
 
-  File.write("#{Time.now}--users-logs.txt", "user_name = #{user_name}\n\n" +
-  "@name = #{@name}\n\n@users = #{@users}\n\n@user = #{@user}")
+  #File.write("#{Time.now}--users-logs.txt", "user_name = #{user_name}\n\n" +
+  # "@name = #{@name}\n\n@users = #{@users}\n\n@user = #{@user}")
 
   erb :user_info do
-    erb :footer
+    erb :links_other_users
   end
 end
 

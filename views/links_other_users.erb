@@ -1,4 +1,6 @@
 <% @users.each do |user| %>
   <% next if user[:name] == @user[:name] %>
-    <%= user %>
+    <a href="/<%= user[:name] %>" class="other-user-links">
+      <%= user[:name].capitalize %>
+    </a>
 <% end %>

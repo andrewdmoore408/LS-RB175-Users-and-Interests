@@ -8,11 +8,11 @@
   </p>
 
   <p>
-    <%= @user[:interests].map(&:capitalize).join(', ') %>
+    Interests: <%= @user[:interests].map(&:capitalize).join(', ') %>
   </p>
 </main>
 
 
-<footer id="links-other-users">
+<section id="links-other-users">
   <%= yield %>
-</footer>
+</section>
