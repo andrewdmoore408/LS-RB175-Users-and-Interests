@@ -14,13 +14,9 @@ end
 
 helpers do
   def count_interests
-    interest_count = 0
-
-    @users.each do |user|
-      interest_count += user[:interests].length
+    @users.reduce(0) do |sum, user|
+      sum + user[:interests].length
     end
-
-    interest_count
   end
 end
 
