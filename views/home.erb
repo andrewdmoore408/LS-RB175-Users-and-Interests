@@ -1,1 +1,15 @@
-<p>You are now at the homepage</p>
+<% @users.each do |user| %>
+  <p>
+    <%= user %>
+  </p>
+  <p>
+    <%= "Name is: #{user[:name]}" %>
+  </p>
+  <p>
+    <%= "Email is: #{user[:email]}" %>
+  </p>
+  <p>
+    <%= "Interests: #{user[:interests]}" %>
+  </p>
+
+<% end %>

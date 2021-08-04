@@ -1,0 +1,12 @@
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <a href="/<%= user[:name] %>">
+        <%= user[:name].capitalize %>
+      </a>
+    </li>
+    <li class="DEBUGGING">
+      <%= user %>
+    </li>
+  <% end %>
+</ul>
